@@ -1,0 +1,58 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build Results
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+*.log
+
+# NuGet
+*.nupkg
+packages/
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Rider
+.idea/
+
+# ASP.NET
+*.Publish.xml
+*.dbmdl
+
+# Entity Framework
+*.jfm
+
+# VS Code
+.vscode/
+
+# Otros
+*.pdb
+*.cache
+*.vsidx
+*.db
+*.DS_Store
+*.class
+*.tmp
+*.bak
+*.swp
+
+# Git ignore archivos temporales
+*.tmp
+*.temp
+
+# Ignorar archivos de configuración del sistema
+Thumbs.db
+ehthumbs.db
+Desktop.ini

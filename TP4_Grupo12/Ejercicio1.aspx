@@ -35,8 +35,11 @@
             </tr>
             <tr>
                 <td class="auto-style1">&nbsp;</td>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
+                <td class="auto-style2">PROVINCIA:</td>
+                <td class="auto-style3">
+                    <asp:DropDownList ID="ddlProvincia0" runat="server" Width="151px">
+                    </asp:DropDownList>
+                </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>

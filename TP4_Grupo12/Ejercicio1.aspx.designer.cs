@@ -24,6 +24,15 @@ namespace TP4_Grupo12
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Control ddlProvincia0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlProvincia0;
+
+        /// <summary>
         /// Control lblLocalidad.
         /// </summary>
         /// <remarks>

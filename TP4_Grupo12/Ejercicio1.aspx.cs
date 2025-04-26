@@ -37,6 +37,10 @@ namespace TP4_Grupo12
 
                 ddlLocalidad2.Items.Add(porDefecto);
 
+                // Llenamos el ddl con los datos de la base de datos
+                SqlConnection connection = new SqlConnection(connectionString);
+                SqlCommand sqlCommand = new SqlCommand(sqlQueryProvincias, connection);
+
                 connection.Close();
 
             }

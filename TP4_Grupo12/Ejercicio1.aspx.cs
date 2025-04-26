@@ -11,7 +11,7 @@ namespace TP4_Grupo12
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        private const string connectionString = "Data Source=NOODLE-DESK;Initial Catalog=Viajes;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        private const string connectionString = @"Server=DESKTOP-JNJ0TAL\SQLEXPRESS;DataBase=Viajes;Integrated Security=True";
         private string sqlQueryProvincias = "SELECT * FROM Provincias";
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,6 +24,19 @@ namespace TP4_Grupo12
                 // Consulta SQL que se desee ejecutar 
                 SqlCommand sqlCommand = new SqlCommand(sqlQueryProvincias, connection);
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                // Agregamos las opciones por defecto a los ddl con un ListItem
+
+                ListItem porDefecto = new ListItem("-- Seleccionar --" , "0");
+
+                ddlProvincia1.Items.Add(porDefecto);
+
+                ddlLocalidad1.Items.Add(porDefecto);
+
+                ddlProvincia2.Items.Add(porDefecto);
+
+                ddlLocalidad2.Items.Add(porDefecto);
+
                 connection.Close();
 
             }

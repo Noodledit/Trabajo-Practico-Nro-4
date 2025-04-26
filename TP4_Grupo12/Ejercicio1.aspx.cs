@@ -11,7 +11,7 @@ namespace TP4_Grupo12
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        private const string connectionString = @"Server=DESKTOP-JNJ0TAL\SQLEXPRESS;DataBase=Viajes;Integrated Security=True";
+        private const string connectionString = @"Server=(local);DataBase=Viajes;Integrated Security=True";
         private string sqlQueryProvincias = "SELECT * FROM Provincias";
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,17 +30,17 @@ namespace TP4_Grupo12
                 ListItem porDefecto = new ListItem("-- Seleccionar --" , "0");
 
                 ddlProvincia1.Items.Add(porDefecto);
-
                 ddlLocalidad1.Items.Add(porDefecto);
-
                 ddlProvincia2.Items.Add(porDefecto);
-
                 ddlLocalidad2.Items.Add(porDefecto);
 
                 // Llenamos el ddl con los datos de la base de datos
-                SqlConnection connection = new SqlConnection(connectionString);
-                SqlCommand sqlCommand = new SqlCommand(sqlQueryProvincias, connection);
+                ddlProvincia1.DataSource = sqlDataReader;
+                ddlProvincia1.DataTextField = "NombreProvincia";
+                ddlProvincia1.DataValueField = "IdProvincia";
+                ddlProvincia1.DataBind();
 
+                sqlDataReader.Close();
                 connection.Close();
 
             }

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace TP4_Grupo12
 {
@@ -16,6 +17,14 @@ namespace TP4_Grupo12
         {
             if(!IsPostBack)
             {
+                //conexion a la base de datos en sql server
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+
+                // Consulta SQL que se desee ejecutar 
+                SqlCommand sqlCommand = new SqlCommand(sqlQueryProvincias, connection);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                connection.Close();
 
             }
         }

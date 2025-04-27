@@ -11,11 +11,12 @@ namespace TP4_Grupo12
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        private const string connectionString = @"Server=(local);DataBase=Viajes;Integrated Security=True";
+        // Cambiar el campo const a readonly para evitar el error ENC0011  
+        private string connectionString = @"Server=(local);DataBase=Viajes;Integrated Security=True";  //  Cadena de conexion valen:  Data Source=DESKTOP-MHN7D94\\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security=True
         private string sqlQueryProvincias = "SELECT * FROM Provincias";
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 //conexion a la base de datos en sql server
                 SqlConnection connection = new SqlConnection(connectionString);
@@ -27,7 +28,7 @@ namespace TP4_Grupo12
 
                 // Agregamos las opciones por defecto a los ddl con un ListItem
 
-                ListItem porDefecto = new ListItem("-- Seleccionar --" , "0");
+                ListItem porDefecto = new ListItem("-- Seleccionar --", "0");
 
                 ddlProvincia1.Items.Add(porDefecto);
                 ddlLocalidad1.Items.Add(porDefecto);
@@ -58,9 +59,27 @@ namespace TP4_Grupo12
             ddlLocalidad1.DataSource = sqlDataReader;
             ddlLocalidad1.DataTextField = "NombreLocalidad";
             ddlLocalidad1.DataValueField = "IdLocalidad";
-            
-
+            //Llenar el ddl Localidad Inicio con los datos cargados. 
+            ddlLocalidad1.DataBind();
             connection.Close();
+
+            // Llenar el DDL PROVINCIAS FINAL con las provincias que no fueron seleccionadas en el DDL PROVINCIAS INICIO. 
+            SqlConnection connection2 = new SqlConnection(connectionString); 
+            SqlCommand sqlCommand2 = new SqlCommand("SELECT * FROM Provincias WHERE IdProvincia != @IdProvincia", connection2);
+            sqlCommand2.Parameters.AddWithValue("@IdProvincia", ddlProvincia1.SelectedValue);
+           
+            connection2.Open();
+            
+            SqlDataReader sqlDataReader2 = sqlCommand2.ExecuteReader();
+            
+            ddlProvincia2.DataSource = sqlDataReader2;
+            ddlProvincia2.DataTextField = "NombreProvincia";
+            ddlProvincia2.DataValueField = "IdProvincia";
+            ddlProvincia2.DataBind();
+            
+            connection2.Close();
+
+
         }
     }
 }

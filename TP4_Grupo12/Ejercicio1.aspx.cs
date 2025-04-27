@@ -50,7 +50,17 @@ namespace TP4_Grupo12
             //conexion a la base de datos en sql server
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Localidades WHERE IdProvincia = @IdProvincia", connection);
+            sqlCommand.Parameters.AddWithValue("@IdProvincia", ddlProvincia1.SelectedValue);
             connection.Open();
+
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+            ddlLocalidad1.DataSource = sqlDataReader;
+            ddlLocalidad1.DataTextField = "NombreLocalidad";
+            ddlLocalidad1.DataValueField = "IdLocalidad";
+            
+
+            connection.Close();
         }
     }
 }

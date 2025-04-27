@@ -42,8 +42,15 @@ namespace TP4_Grupo12
 
                 sqlDataReader.Close();
                 connection.Close();
-
             }
+        }
+
+        protected void ddlProvincia1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //conexion a la base de datos en sql server
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Localidades WHERE IdProvincia = @IdProvincia", connection);
+            connection.Open();
         }
     }
 }

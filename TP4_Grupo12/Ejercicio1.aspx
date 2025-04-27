@@ -64,7 +64,7 @@
                 <td class="auto-style1">&nbsp;</td>
                 <td class="auto-style9">PROVINCIA:</td>
                 <td class="auto-style3">
-                    <asp:DropDownList ID="ddlProvincia1" runat="server" Width="151px">
+                    <asp:DropDownList ID="ddlProvincia1" runat="server" Width="151px" OnSelectedIndexChanged="ddlProvincia1_SelectedIndexChanged">
                     </asp:DropDownList>
                 </td>
                 <td>&nbsp;</td>

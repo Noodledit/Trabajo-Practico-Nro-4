@@ -83,5 +83,26 @@ namespace TP4_Grupo12
 
 
         }
+
+
+        protected void ddlProvincia2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Llenar ddlLocalidad2 
+            SqlConnection connection3 = new SqlConnection(connectionString);
+            SqlCommand sqlCommand3 = new SqlCommand("SELECT * FROM Localidades WHERE IdProvincia = @IdProvincia", connection3);
+            sqlCommand3.Parameters.AddWithValue("@IdProvincia", ddlProvincia2.SelectedValue);
+            connection3.Open();
+            SqlDataReader sqlDataReader3 = sqlCommand3.ExecuteReader();
+
+            ddlLocalidad2.DataSource = sqlDataReader3;
+            ddlLocalidad2.DataTextField = "NombreLocalidad";
+            ddlLocalidad2.DataValueField = "IdLocalidad";
+            ddlLocalidad2.DataBind();
+
+            sqlDataReader3.Close();
+            connection3.Close();
+
+
+        }
     }
 }

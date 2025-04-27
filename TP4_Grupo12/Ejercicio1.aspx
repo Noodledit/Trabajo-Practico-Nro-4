@@ -102,7 +102,7 @@
                 <td class="auto-style1">&nbsp;</td>
                 <td class="auto-style9">PROVINCIA:</td>
                 <td class="auto-style3">
-                    <asp:DropDownList ID="ddlProvincia2" runat="server" Width="151px">
+                    <asp:DropDownList ID="ddlProvincia2" runat="server" Width="151px" AutoPostBack="True" OnSelectedIndexChanged="ddlProvincia2_SelectedIndexChanged">
                     </asp:DropDownList>
                 </td>
                 <td>&nbsp;</td>

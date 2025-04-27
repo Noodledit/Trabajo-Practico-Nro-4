@@ -11,7 +11,12 @@ namespace TP4_Grupo12
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
+            if (!IsPostBack)
+            {
+                // Asignar valores al DropDownList IDProducto
+                ddlProducto.Items.Add(new ListItem("Igual a:", "1"));
+                ddlProducto.Items.Add(new ListItem("Mayor a:", "2"));
+                ddlProducto.Items.Add(new ListItem("Menor a:", "3"));
+            }
     }
 }

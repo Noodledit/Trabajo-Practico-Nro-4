@@ -76,7 +76,9 @@ namespace TP4_Grupo12
             ddlProvincia2.DataTextField = "NombreProvincia";
             ddlProvincia2.DataValueField = "IdProvincia";
             ddlProvincia2.DataBind();
-            
+
+
+            sqlDataReader.Close();
             connection2.Close();
 
 

@@ -13,10 +13,29 @@ namespace TP4_Grupo12
         {
             if (!IsPostBack)
             {
+                ddlProducto.Items.Clear();
+                ddlCategoria.Items.Clear();
+
+
                 // Asignar valores al DropDownList IDProducto
                 ddlProducto.Items.Add(new ListItem("Igual a:", "1"));
                 ddlProducto.Items.Add(new ListItem("Mayor a:", "2"));
                 ddlProducto.Items.Add(new ListItem("Menor a:", "3"));
+
+               // Asignar valores al DropDownList IDCategoria
+                ddlCategoria.Items.Add(new ListItem("Igual a:", "1"));
+                ddlCategoria.Items.Add(new ListItem("Mayor a:", "2"));
+                ddlCategoria.Items.Add(new ListItem("Menor a:", "3"));
             }
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
     }
 }

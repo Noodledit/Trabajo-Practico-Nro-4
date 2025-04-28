@@ -59,6 +59,7 @@ namespace TP4_Grupo12
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
+
             //se asigna el evento al botón filtrar y se crean las consultas SQL
             // para filtrar los productos por IdProducto y IdCategoría con los valores seleccionados en los DropDownList 
             // y se generan las referencias a los parámetros de la consulta SQL
@@ -68,6 +69,28 @@ namespace TP4_Grupo12
             string condicion2 = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM productos WHERE IdProducto @condicion1 @IdProducto AND IdCategoría @condicion2 @IdCategoría";
 
             //Las Referencias a asignar son @codicion1, condicion2, @IdProducto y @IdCategoria
+
+            switch (ddlProductoId.SelectedValue)
+            {
+                case "0":
+                    condicion1IdProd = condicion1IdProd.Replace("@condicion1", "=");
+                break;
+
+                case "1":
+                    condicion1IdProd = condicion1IdProd.Replace("@condicion1", ">");
+                    break;
+
+                case "2":
+                    condicion1IdProd = condicion1IdProd.Replace("@condicion1", "<");
+                    break;
+
+
+
+
+            }
+
+
+
         }
 
 

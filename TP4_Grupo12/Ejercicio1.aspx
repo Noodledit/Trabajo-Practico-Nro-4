@@ -37,6 +37,7 @@
         }
         .auto-style11 {
             width: 122px;
+            height: 23px;
         }
         .auto-style12 {
             width: 122px;
@@ -64,7 +65,7 @@
                 <td class="auto-style1">&nbsp;</td>
                 <td class="auto-style9">PROVINCIA:</td>
                 <td class="auto-style3">
-                    <asp:DropDownList ID="ddlProvincia1" runat="server" AutoPostBack="True" Width="151px" OnSelectedIndexChanged="ddlProvincia1_SelectedIndexChanged">
+                    <asp:DropDownList ID="ddlProvincia1" runat="server" AutoPostBack="True" Width="151px" OnSelectedIndexChanged="ddlProvincia1_SelectedIndexChanged" Height="30px">
                     </asp:DropDownList>
                 </td>
                 <td>&nbsp;</td>
@@ -75,7 +76,7 @@
                     <asp:Label ID="lblLocalidad" runat="server" Text="LOCALIDAD:"></asp:Label>
                 </td>
                 <td class="auto-style3">
-                    <asp:DropDownList ID="ddlLocalidad1" runat="server" Width="151px">
+                    <asp:DropDownList ID="ddlLocalidad1" runat="server" Width="151px" Height="30px">
                     </asp:DropDownList>
                 </td>
                 <td>&nbsp;</td>
@@ -93,16 +94,16 @@
                 <td class="auto-style7"></td>
             </tr>
             <tr>
-                <td class="auto-style1">&nbsp;</td>
-                <td class="auto-style11">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style4"></td>
+                <td class="auto-style11"></td>
+                <td class="auto-style6"></td>
+                <td class="auto-style7"></td>
             </tr>
             <tr>
                 <td class="auto-style1">&nbsp;</td>
                 <td class="auto-style9">PROVINCIA:</td>
                 <td class="auto-style3">
-                    <asp:DropDownList ID="ddlProvincia2" runat="server" Width="151px" AutoPostBack="True" OnSelectedIndexChanged="ddlProvincia2_SelectedIndexChanged">
+                    <asp:DropDownList ID="ddlProvincia2" runat="server" Width="151px" AutoPostBack="True" OnSelectedIndexChanged="ddlProvincia2_SelectedIndexChanged" Height="30px">
                     </asp:DropDownList>
                 </td>
                 <td>&nbsp;</td>
@@ -111,7 +112,7 @@
                 <td class="auto-style1">&nbsp;</td>
                 <td class="auto-style9">LOCALIDAD:</td>
                 <td class="auto-style3">
-                    <asp:DropDownList ID="ddlLocalidad2" runat="server" Height="16px" Width="151px">
+                    <asp:DropDownList ID="ddlLocalidad2" runat="server" Height="30px" Width="151px">
                     </asp:DropDownList>
                 </td>
                 <td>&nbsp;</td>

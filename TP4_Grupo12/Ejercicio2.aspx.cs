@@ -11,7 +11,7 @@ namespace TP4_Grupo12
     public partial class WebForm2 : System.Web.UI.Page
     {
 
-        private const string connectionString = @"Data Source=noodle-desk;Initial Catalog=Neptuno;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        private const string connectionString = @"Data Source=localhost;Initial Catalog=Neptuno;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         private const string sqlQueryProductos = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos";
 
         protected void Page_Load(object sender, EventArgs e)

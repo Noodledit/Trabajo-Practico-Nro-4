@@ -15,6 +15,7 @@ namespace TP4_Grupo12
         // Punto 1: Creando la conexión y cargando información
 
         private const string connectionString = @"Data Source=localhost;Initial Catalog=Libreria;Integrated Security=True;TrustServerCertificate=True";
+        //@"Data Source=DESKTOP-MHN7D94\SQLEXPRESS;Initial Catalog=Libreria;Integrated Security=True"
 
         private string consultaSQl = "SELECT IdTema, Tema FROM Temas";
 
@@ -45,7 +46,7 @@ namespace TP4_Grupo12
             protected void btnVerLibros_Click(object sender, EventArgs e)
             {
             string idTema = ddlTema.SelectedValue;
-            Response.Redirect("Ejercicio3a.aspx?idTema=" + idTema);
+            Response.Redirect("Ejercicio3Libro.aspx?idTema=" + idTema);
 
             }   
 

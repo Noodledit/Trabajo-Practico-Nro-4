@@ -58,10 +58,10 @@
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style3">&nbsp;</td>
                 <td class="auto-style4">
-                    <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
+                    <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
                 </td>
                 <td>
-                    <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar Filtro" Width="95px" />
+                    <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar Filtro" Width="95px"  />
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>

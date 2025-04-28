@@ -13,7 +13,7 @@ namespace TP4_Grupo12
 
         private const string connectionString = @"Server=(local);Database=Neptuno;Integrated Security=True";
 
-        private const string sqlQueryProductos = "SELECT * FROM Productos";
+        private const string sqlQueryProductos = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -42,7 +42,8 @@ namespace TP4_Grupo12
 
                 SqlDataReader reader = sqlCommand.ExecuteReader();
 
-                //GridView1.DataSource = reader;
+                gvProductos.DataSource = reader;
+                gvProductos.DataBind();
 
                 reader.Close();
 
@@ -54,6 +55,19 @@ namespace TP4_Grupo12
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            //se asigna el evento al botón filtrar y se crean las consultas SQL
+            // para filtrar los productos por IdProducto y IdCategoría con los valores seleccionados en los DropDownList 
+            // y se generan las referencias a los parámetros de la consulta SQL
+
+            string condicion1IdCat = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM productos WHERE IdCategoría @condicion2 @IdCategoría";
+            string condicion1IdProd = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM productos WHERE IdProducto @condicion1 @IdProducto";
+            string condicion2 = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM productos WHERE IdProducto @condicion1 @IdProducto AND IdCategoría @condicion2 @IdCategoría";
+
+            //Las Referencias a asignar son @codicion1, condicion2, @IdProducto y @IdCategoria
         }
 
 

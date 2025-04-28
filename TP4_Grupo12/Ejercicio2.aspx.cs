@@ -126,6 +126,16 @@ namespace TP4_Grupo12
                     reader.Close();
                 }
             }
+
+            if (string.IsNullOrWhiteSpace(txtProductoId.Text) && string.IsNullOrWhiteSpace(txtCategoriaId.Text))
+            {
+                lblMensaje.Text = "Por favor, ingrese valores en los campos.";
+            }
+            else
+            {
+                lblMensaje.Text = "";
+            }
+
         }
 
         protected void btnQuitarFiltro_Click(object sender, EventArgs e)

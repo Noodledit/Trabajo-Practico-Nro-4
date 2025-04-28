@@ -52,7 +52,9 @@
                 <td class="auto-style4">
                     <asp:TextBox ID="txtProductoId" runat="server" Width="229px"></asp:TextBox>
                 </td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>

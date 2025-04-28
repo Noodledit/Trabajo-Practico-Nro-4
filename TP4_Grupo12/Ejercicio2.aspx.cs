@@ -11,7 +11,7 @@ namespace TP4_Grupo12
     public partial class WebForm2 : System.Web.UI.Page
     {
 
-        private const string connectionString = @"Data Source=CAMILAPC\SQLEXPRESS;Initial Catalog=Neptuno;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        private const string connectionString = @"Data Source=noodle-desk;Initial Catalog=Neptuno;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         private const string sqlQueryProductos = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos";
 
         protected void Page_Load(object sender, EventArgs e)
@@ -60,63 +60,71 @@ namespace TP4_Grupo12
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
-            string SqlCondicion = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM productos WHERE ";
-
-            
-            if (!string.IsNullOrEmpty(txtProductoId.Text))
+            if (!string.IsNullOrEmpty(txtProductoId.Text) || !string.IsNullOrEmpty(txtCategoriaId.Text))
             {
-                switch (ddlProductoId.SelectedValue)
-                {
-                    case "1":
-                        SqlCondicion += " AND IdProducto = @IdProducto";
-                        break;
-                    case "2":
-                        SqlCondicion += " AND IdProducto > @IdProducto";
-                        break;
-                    case "3":
-                        SqlCondicion += " AND IdProducto < @IdProducto";
-                        break;
-                }
-            }
+                string SqlCondicion = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM productos WHERE ";
 
-            if (!string.IsNullOrEmpty(txtCategoriaId.Text))
-            {
-                switch (ddlCategoriaId.SelectedValue)
-                {
-                    case "1":
-                        SqlCondicion += " AND IdCategoría = @IdCategoría";
-                        break;
-                    case "2":
-                        SqlCondicion += " AND IdCategoría > @IdCategoría";
-                        break;
-                    case "3":
-                        SqlCondicion += " AND IdCategoría < @IdCategoría";
-                        break;
-                }
-            }
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand(SqlCondicion, connection);
-
-                
                 if (!string.IsNullOrEmpty(txtProductoId.Text))
                 {
-                    command.Parameters.AddWithValue("@IdProducto", int.Parse(txtProductoId.Text));
+                    switch (ddlProductoId.SelectedValue)
+                    {
+                        case "1":
+                            SqlCondicion += "IdProducto = @IdProducto";
+                            break;
+                        case "2":
+                            SqlCondicion += "IdProducto > @IdProducto";
+                            break;
+                        case "3":
+                            SqlCondicion += "IdProducto < @IdProducto";
+                            break;
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(txtCategoriaId.Text) && !string.IsNullOrEmpty(txtProductoId.Text))
+                {
+                    SqlCondicion += " AND ";
                 }
 
                 if (!string.IsNullOrEmpty(txtCategoriaId.Text))
                 {
-                    command.Parameters.AddWithValue("@IdCategoría", int.Parse(txtCategoriaId.Text));
+                    switch (ddlCategoriaId.SelectedValue)
+                    {
+                        case "1":
+                            SqlCondicion += "IdCategoría = @IdCategoría";
+                            break;
+                        case "2":
+                            SqlCondicion += "IdCategoría > @IdCategoría";
+                            break;
+                        case "3":
+                            SqlCondicion += "IdCategoría < @IdCategoría";
+                            break;
+                    }
                 }
 
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    SqlCommand command = new SqlCommand(SqlCondicion, connection);
 
-                gvProductos.DataSource = reader;
-                gvProductos.DataBind();
 
-                reader.Close();
+                    if (!string.IsNullOrEmpty(txtProductoId.Text))
+                    {
+                        command.Parameters.AddWithValue("@IdProducto", int.Parse(txtProductoId.Text));
+                    }
+
+                    if (!string.IsNullOrEmpty(txtCategoriaId.Text))
+                    {
+                        command.Parameters.AddWithValue("@IdCategoría", int.Parse(txtCategoriaId.Text));
+                    }
+
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    gvProductos.DataSource = reader;
+                    gvProductos.DataBind();
+
+                    reader.Close();
+                }
             }
         }
 

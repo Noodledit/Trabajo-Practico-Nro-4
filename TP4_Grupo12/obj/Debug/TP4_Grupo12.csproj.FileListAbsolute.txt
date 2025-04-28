@@ -127,3 +127,46 @@ C:\Users\camim\OneDrive\Escritorio\New folder\Trabajo-Practico-Nro-4\TP4_Grupo12
 C:\Users\camim\OneDrive\Escritorio\New folder\Trabajo-Practico-Nro-4\TP4_Grupo12\obj\Debug\TP4_Grup.5CDFFFD3.Up2Date
 C:\Users\camim\OneDrive\Escritorio\New folder\Trabajo-Practico-Nro-4\TP4_Grupo12\obj\Debug\TP4_Grupo12.dll
 C:\Users\camim\OneDrive\Escritorio\New folder\Trabajo-Practico-Nro-4\TP4_Grupo12\obj\Debug\TP4_Grupo12.pdb
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\TP4_Grupo12.dll.config
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\TP4_Grupo12.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\TP4_Grupo12.pdb
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\csc.exe
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\csc.exe.config
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\csc.rsp
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\csi.exe
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\csi.exe.config
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\csi.rsp
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\Microsoft.Managed.Core.targets
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\System.Buffers.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\System.Collections.Immutable.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\System.Memory.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\System.Numerics.Vectors.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\System.Reflection.Metadata.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\vbc.exe
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\vbc.exe.config
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\vbc.rsp
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\VBCSCompiler.exe
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\roslyn\VBCSCompiler.exe.config
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\System.CodeDom.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\bin\System.CodeDom.xml
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\obj\Debug\TP4_Grupo12.csproj.AssemblyReference.cache
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\obj\Debug\TP4_Grupo12.csproj.CoreCompileInputs.cache
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\obj\Debug\TP4_Grup.5CDFFFD3.Up2Date
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\obj\Debug\TP4_Grupo12.dll
+E:\Usuarios\Noodledit\Desktop\Nueva carpeta (3)\Trabajo-Practico-Nro-4\TP4_Grupo12\obj\Debug\TP4_Grupo12.pdb

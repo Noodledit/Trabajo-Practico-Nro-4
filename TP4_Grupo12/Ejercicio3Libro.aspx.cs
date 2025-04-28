@@ -44,6 +44,9 @@ namespace TP4_Grupo12
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
             DataTable dataTable = new DataTable();
             sqlDataAdapter.Fill(dataTable);
+            
+            GridView1.DataSource = dataTable;
+            GridView1.DataBind();
         }
     }
 }

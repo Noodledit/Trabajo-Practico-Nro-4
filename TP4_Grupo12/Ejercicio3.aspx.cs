@@ -33,7 +33,12 @@ namespace TP4_Grupo12
                 ddlTema.DataSource = sqlReader;
                 ddlTema.DataTextField = "Tema";
                 ddlTema.DataValueField = "IdTema";
-                
+
+                // 
+                ddlTema.DataBind();
+               connection.Close();
+
+
 
 
 

@@ -14,7 +14,7 @@ namespace TP4_Grupo12
 
         // Punto 1: Creando la conexión y cargando información
 
-        private const string connectionString = @"Data Source=localhost;Initial Catalog=Libreria;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        private const string connectionString = @"Data Source=CAMILAPC\SQLEXPRESS;Initial Catalog=Libreria;Integrated Security=True;TrustServerCertificate=True";
 
         private string consultaSQl = "SELECT IdTema, Tema FROM Temas";
 
@@ -36,17 +36,19 @@ namespace TP4_Grupo12
 
                 // 
                 ddlTema.DataBind();
-               connection.Close();
-
-
-
-
+                connection.Close();
 
                 sqlReader.Close();
-                
-
 
             }
         }
+            protected void btnVerLibros_Click(object sender, EventArgs e)
+            {
+            string idTema = ddlTema.SelectedValue;
+            Response.Redirect("Ejercicio3a.aspx?idTema=" + idTema);
+
+            }   
+
+        
     }
 }

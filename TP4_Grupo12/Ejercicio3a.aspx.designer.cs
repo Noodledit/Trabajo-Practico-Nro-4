@@ -11,7 +11,7 @@ namespace TP4_Grupo12
 {
 
 
-    public partial class WebForm3
+    public partial class Ejercicio3a
     {
 
         /// <summary>
@@ -24,30 +24,21 @@ namespace TP4_Grupo12
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Panel1 control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// ddlTema control.
+        /// btnConsultar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTema;
-
-        /// <summary>
-        /// btnVerLibros control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnVerLibros;
+        protected global::System.Web.UI.WebControls.LinkButton btnConsultar;
     }
 }

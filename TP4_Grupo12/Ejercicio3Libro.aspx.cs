@@ -29,7 +29,7 @@ namespace TP4_Grupo12
                 "SELECT L.IdLibro, L.Titulo, L.Autor, L.Precio, T.Tema " +
                 "FROM Libros L " +
                 "INNER JOIN Temas T ON L.IdTema = T.IdTema " +
-                "WHERE L.IdLibro = @IdLibro";
+                "WHERE L.IdTema = @IdTema";
             // Data Source=DESKTOP-MHN7D94\SQLEXPRESS;Initial Catalog=Libreria;Integrated Security=True
             // Data Source=localhost;Initial Catalog=Libreria;Integrated Security=True
 
@@ -38,7 +38,7 @@ namespace TP4_Grupo12
             // se declara el Command para realizar la lectura de la base de datos
             SqlCommand sqlCommand = new SqlCommand(sqlQueryTemas, sqlConnectionBook);
             // se declaran los parametros para la consulta
-            sqlCommand.Parameters.AddWithValue("@IdLibro", Request.QueryString["idLibro"]);
+            sqlCommand.Parameters.AddWithValue("@IdTema", Request.QueryString["idTema"]);
         }
     }
 }

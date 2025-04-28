@@ -14,7 +14,7 @@ namespace TP4_Grupo12
 
         // Punto 1: Creando la conexión y cargando información
 
-        private const string connectionString = @"Data Source=CAMILAPC\SQLEXPRESS;Initial Catalog=Libreria;Integrated Security=True;TrustServerCertificate=True";
+        private const string connectionString = @"Data Source=localhost;Initial Catalog=Libreria;Integrated Security=True;TrustServerCertificate=True";
 
         private string consultaSQl = "SELECT IdTema, Tema FROM Temas";
 

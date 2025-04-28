@@ -20,6 +20,11 @@ namespace TP4_Grupo12
         private void MostrarLibro()
         {
             string connectionDB = "Data Source=localhost;Initial Catalog=Libreria;Integrated Security=True";
+
+            SqlConnection sqlConnectionBook = new SqlConnection(connectionDB);
+            sqlConnectionBook.Open();
+
+
         }
     }
 }

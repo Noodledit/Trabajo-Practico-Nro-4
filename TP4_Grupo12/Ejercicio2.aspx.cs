@@ -57,40 +57,50 @@ namespace TP4_Grupo12
 
         }
 
+        
+
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
+            string SqlCondicion = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM productos WHERE ";
 
-            //se asigna el evento al botón filtrar y se crean las consultas SQL
-            // para filtrar los productos por IdProducto y IdCategoría con los valores seleccionados en los DropDownList 
-            // y se generan las referencias a los parámetros de la consulta SQL
-
-            string condicion1IdCat = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM productos WHERE IdCategoría @condicion2 @IdCategoría";
-            string condicion1IdProd = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM productos WHERE IdProducto @condicion1 @IdProducto";
-            string condicion2 = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM productos WHERE IdProducto @condicion1 @IdProducto AND IdCategoría @condicion2 @IdCategoría";
-
-            //Las Referencias a asignar son @codicion1, condicion2, @IdProducto y @IdCategoria
-
-            switch (ddlProductoId.SelectedValue)
+            
+            if (!string.IsNullOrEmpty(txtProductoId.Text))
             {
-                case "1":
-                    condicion1IdProd = condicion1IdProd.Replace("@condicion1", "=");
-                break;
-
-                case "2":
-                    condicion1IdProd = condicion1IdProd.Replace("@condicion1", ">");
-                    break;
-
-                case "3":
-                    condicion1IdProd = condicion1IdProd.Replace("@condicion1", "<");
-                    break;
-
-
-
-
+                switch (ddlProductoId.SelectedValue)
+                {
+                    case "1":
+                        SqlCondicion += " IdProducto = @IdProducto";
+                        break;
+                    case "2":
+                        SqlCondicion += " IdProducto > @IdProducto";
+                        break;
+                    case "3":
+                        SqlCondicion += " IdProducto < @IdProducto";
+                        break;
+                }
             }
 
+           
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(SqlCondicion, connection);
 
+                // Parámetros
+                if (!string.IsNullOrEmpty(txtProductoId.Text))
+                {
+                    command.Parameters.AddWithValue("@IdProducto", int.Parse(txtProductoId.Text));
+                }
 
+               
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                gvProductos.DataSource = reader;
+                gvProductos.DataBind();
+
+                reader.Close();
+            }
         }
 
 
@@ -98,4 +108,5 @@ namespace TP4_Grupo12
 
     }
 
-}
+ }
+

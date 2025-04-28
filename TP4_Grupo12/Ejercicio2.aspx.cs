@@ -72,15 +72,15 @@ namespace TP4_Grupo12
 
             switch (ddlProductoId.SelectedValue)
             {
-                case "0":
+                case "1":
                     condicion1IdProd = condicion1IdProd.Replace("@condicion1", "=");
                 break;
 
-                case "1":
+                case "2":
                     condicion1IdProd = condicion1IdProd.Replace("@condicion1", ">");
                     break;
 
-                case "2":
+                case "3":
                     condicion1IdProd = condicion1IdProd.Replace("@condicion1", "<");
                     break;
 

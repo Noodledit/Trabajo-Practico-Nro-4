@@ -49,7 +49,7 @@
                 <tr>
                     <td class="auto-style3">Seleccionar Tema:</td>
                     <td class="auto-style2">
-                        <asp:DropDownList ID="DropDownList1" runat="server">
+                        <asp:DropDownList ID="dllTema" runat="server">
                         </asp:DropDownList>
                     </td>
                 </tr>

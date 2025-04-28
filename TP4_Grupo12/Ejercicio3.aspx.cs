@@ -28,6 +28,19 @@ namespace TP4_Grupo12
                 // se declara el Command para realizar la lectura de la base de datos
                 SqlCommand sqlCommand = new SqlCommand(consultaSQl, connection);
                 SqlDataReader sqlReader = sqlCommand.ExecuteReader();
+
+                //Aqui agregamos al dll
+                ddlTema.DataSource = sqlReader;
+                ddlTema.DataTextField = "Tema";
+                ddlTema.DataValueField = "IdTema";
+                
+
+
+
+                sqlReader.Close();
+                
+
+
             }
         }
     }

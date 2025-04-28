@@ -12,7 +12,7 @@ namespace TP4_Grupo12
     public partial class WebForm1 : System.Web.UI.Page
     {
         // Cambiar el campo const a readonly para evitar el error ENC0011  
-        private string connectionString = "Data Source=DESKTOP-MHN7D94\\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security=True";
+        private string connectionString = "Data Source=localhost;Initial Catalog=Viajes;Integrated Security=True";
         // @"Server=(local);DataBase=Viajes;Integrated Security=True"
         //  Cadena de conexion valen:  Data Source=DESKTOP-MHN7D94\\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security=True
         private string sqlQueryProvincias = "SELECT * FROM Provincias";

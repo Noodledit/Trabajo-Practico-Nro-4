@@ -20,40 +20,32 @@ namespace TP4_Grupo12
         {
             if (!IsPostBack)
             {
-                //conexion a la base de datos en sql server
+                // Conexión a la base de datos
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
 
-                // Consulta SQL que se desee ejecutar 
+                // Consulta SQL
                 SqlCommand sqlCommand = new SqlCommand(sqlQueryProvincias, connection);
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
-                // Agregamos las opciones por defecto a los ddl con un ListItem
-
-                ListItem porDefecto = new ListItem("-- Seleccionar --", "0");
-
-                ddlProvincia1.Items.Add(porDefecto);
-                ddlLocalidad1.Items.Add(porDefecto);
-                ddlProvincia2.Items.Add(porDefecto);
-                ddlLocalidad2.Items.Add(porDefecto);
-
-                // Llenamos el ddl con los datos de la base de datos
+                // Llenar ddlProvincia1 con datos de la base de datos
                 ddlProvincia1.DataSource = sqlDataReader;
                 ddlProvincia1.DataTextField = "NombreProvincia";
                 ddlProvincia1.DataValueField = "IdProvincia";
                 ddlProvincia1.DataBind();
 
-                // Agregar la opción por defecto a todos los DropDownList
+                // Agregar la opción por defecto solo una vez
                 ddlProvincia1.Items.Insert(0, new ListItem("-- Seleccionar --", "0"));
                 ddlProvincia1.SelectedIndex = 0;
 
-                ddlLocalidad1.Items.Add(new ListItem("-- Seleccionar --", "0"));
+                // Agregar la opción por defecto a los demás DropDownList
+                ddlLocalidad1.Items.Insert(0, new ListItem("-- Seleccionar --", "0"));
                 ddlLocalidad1.SelectedIndex = 0;
 
-                ddlProvincia2.Items.Add(new ListItem("-- Seleccionar --", "0"));
+                ddlProvincia2.Items.Insert(0, new ListItem("-- Seleccionar --", "0"));
                 ddlProvincia2.SelectedIndex = 0;
 
-                ddlLocalidad2.Items.Add(new ListItem("-- Seleccionar --", "0"));
+                ddlLocalidad2.Items.Insert(0, new ListItem("-- Seleccionar --", "0"));
                 ddlLocalidad2.SelectedIndex = 0;
 
                 sqlDataReader.Close();
@@ -63,7 +55,7 @@ namespace TP4_Grupo12
 
         protected void ddlProvincia1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //conexion a la base de datos en sql server
+            // Conexión y lógica para ddlLocalidad1
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Localidades WHERE IdProvincia = @IdProvincia", connection);
             sqlCommand.Parameters.AddWithValue("@IdProvincia", ddlProvincia1.SelectedValue);
@@ -77,13 +69,13 @@ namespace TP4_Grupo12
             ddlLocalidad1.DataValueField = "IdLocalidad";
             ddlLocalidad1.DataBind();
 
-            // Agregar la opción por defecto
+            // Agregar la opción por defecto solo una vez
             ddlLocalidad1.Items.Insert(0, new ListItem("-- Seleccionar --", "0"));
             ddlLocalidad1.SelectedIndex = 0;
 
             connection.Close();
 
-            // Llenar el DDL PROVINCIAS FINAL con las provincias que no fueron seleccionadas en el DDL PROVINCIAS INICIO. 
+            // Conexión y lógica para ddlProvincia2
             SqlConnection connection2 = new SqlConnection(connectionString);
             SqlCommand sqlCommand2 = new SqlCommand("SELECT * FROM Provincias WHERE IdProvincia != @IdProvincia", connection2);
             sqlCommand2.Parameters.AddWithValue("@IdProvincia", ddlProvincia1.SelectedValue);
@@ -98,21 +90,22 @@ namespace TP4_Grupo12
             ddlProvincia2.DataValueField = "IdProvincia";
             ddlProvincia2.DataBind();
 
-            // Agregar la opción por defecto
+            // Agregar la opción por defecto solo una vez
             ddlProvincia2.Items.Insert(0, new ListItem("-- Seleccionar --", "0"));
             ddlProvincia2.SelectedIndex = 0;
 
-            sqlDataReader2.Close();
+            // Limpiar ddlLocalidad2
+            ddlLocalidad2.Items.Clear();
+            ddlLocalidad2.Items.Insert(0, new ListItem("-- Seleccionar --", "0"));
+            ddlLocalidad2.SelectedIndex = 0;
 
+            sqlDataReader2.Close();
             connection2.Close();
         }
 
-
-
-
         protected void ddlProvincia2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Llenar ddlLocalidad2 
+            // Conexión y lógica para ddlLocalidad2
             SqlConnection connection3 = new SqlConnection(connectionString);
             SqlCommand sqlCommand3 = new SqlCommand("SELECT * FROM Localidades WHERE IdProvincia = @IdProvincia", connection3);
             sqlCommand3.Parameters.AddWithValue("@IdProvincia", ddlProvincia2.SelectedValue);
@@ -126,13 +119,14 @@ namespace TP4_Grupo12
             ddlLocalidad2.DataValueField = "IdLocalidad";
             ddlLocalidad2.DataBind();
 
-            // Agregar la opción por defecto
+            // Agregar la opción por defecto solo una vez
             ddlLocalidad2.Items.Insert(0, new ListItem("-- Seleccionar --", "0"));
             ddlLocalidad2.SelectedIndex = 0;
-            
+
             sqlDataReader3.Close();
             connection3.Close();
         }
+
 
     }
 }

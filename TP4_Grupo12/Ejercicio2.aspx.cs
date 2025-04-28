@@ -68,13 +68,13 @@ namespace TP4_Grupo12
                 switch (ddlProductoId.SelectedValue)
                 {
                     case "1":
-                        SqlCondicion += " IdProducto = @IdProducto";
+                        SqlCondicion += " AND IdProducto = @IdProducto";
                         break;
                     case "2":
-                        SqlCondicion += " IdProducto > @IdProducto";
+                        SqlCondicion += " AND IdProducto > @IdProducto";
                         break;
                     case "3":
-                        SqlCondicion += " IdProducto < @IdProducto";
+                        SqlCondicion += " AND IdProducto < @IdProducto";
                         break;
                 }
             }
@@ -84,13 +84,13 @@ namespace TP4_Grupo12
                 switch (ddlCategoriaId.SelectedValue)
                 {
                     case "1":
-                        SqlCondicion += " IdCategoría = @IdCategoría";
+                        SqlCondicion += " AND IdCategoría = @IdCategoría";
                         break;
                     case "2":
-                        SqlCondicion += " IdCategoría > @IdCategoría";
+                        SqlCondicion += " AND IdCategoría > @IdCategoría";
                         break;
                     case "3":
-                        SqlCondicion += " IdCategoría < @IdCategoría";
+                        SqlCondicion += " AND IdCategoría < @IdCategoría";
                         break;
                 }
             }

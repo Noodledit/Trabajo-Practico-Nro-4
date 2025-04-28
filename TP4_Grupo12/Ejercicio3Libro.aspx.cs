@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace TP4_Grupo12
 {
@@ -19,7 +20,7 @@ namespace TP4_Grupo12
         }
         private void MostrarLibro()
         {
-            string connectionDB = "Data Source=localhost;Initial Catalog=Libreria;Integrated Security=True";
+            string connectionDB = "Data Source=CAMILAPC\\SQLEXPRESS;Initial Catalog=Libreria;Integrated Security=True;TrustServerCertificate=True";
 
             // Data Source=localhost;Initial Catalog=Libreria;Integrated Security=True";
             // Data Source = DESKTOP - MHN7D94\\SQLEXPRESS; Initial Catalog = Libreria; Integrated Security = True
@@ -39,6 +40,10 @@ namespace TP4_Grupo12
             SqlCommand sqlCommand = new SqlCommand(sqlQueryTemas, sqlConnectionBook);
             // se declaran los parametros para la consulta
             sqlCommand.Parameters.AddWithValue("@IdTema", Request.QueryString["idTema"]);
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable);
         }
     }
 }

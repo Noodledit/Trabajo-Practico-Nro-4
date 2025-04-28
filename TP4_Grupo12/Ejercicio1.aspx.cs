@@ -12,7 +12,9 @@ namespace TP4_Grupo12
     public partial class WebForm1 : System.Web.UI.Page
     {
         // Cambiar el campo const a readonly para evitar el error ENC0011  
-        private const string connectionString = @"Data Source=localhost;Initial Catalog=Viajes;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        private string connectionString = "Data Source=DESKTOP-MHN7D94\\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security=True";
+        // @"Server=(local);DataBase=Viajes;Integrated Security=True"
+        //  Cadena de conexion valen:  Data Source=DESKTOP-MHN7D94\\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security=True
         private string sqlQueryProvincias = "SELECT * FROM Provincias";
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -41,6 +43,19 @@ namespace TP4_Grupo12
                 ddlProvincia1.DataValueField = "IdProvincia";
                 ddlProvincia1.DataBind();
 
+                // Agregar la opción por defecto a todos los DropDownList
+                ddlProvincia1.Items.Insert(0, new ListItem("-- Seleccionar --", "0"));
+                ddlProvincia1.SelectedIndex = 0;
+
+                ddlLocalidad1.Items.Add(new ListItem("-- Seleccionar --", "0"));
+                ddlLocalidad1.SelectedIndex = 0;
+
+                ddlProvincia2.Items.Add(new ListItem("-- Seleccionar --", "0"));
+                ddlProvincia2.SelectedIndex = 0;
+
+                ddlLocalidad2.Items.Add(new ListItem("-- Seleccionar --", "0"));
+                ddlLocalidad2.SelectedIndex = 0;
+
                 sqlDataReader.Close();
                 connection.Close();
             }
@@ -56,33 +71,43 @@ namespace TP4_Grupo12
 
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
+            ddlLocalidad1.Items.Clear();
             ddlLocalidad1.DataSource = sqlDataReader;
             ddlLocalidad1.DataTextField = "NombreLocalidad";
             ddlLocalidad1.DataValueField = "IdLocalidad";
-            //Llenar el ddl Localidad Inicio con los datos cargados. 
             ddlLocalidad1.DataBind();
+
+            // Agregar la opción por defecto
+            ddlLocalidad1.Items.Insert(0, new ListItem("-- Seleccionar --", "0"));
+            ddlLocalidad1.SelectedIndex = 0;
+
             connection.Close();
 
             // Llenar el DDL PROVINCIAS FINAL con las provincias que no fueron seleccionadas en el DDL PROVINCIAS INICIO. 
-            SqlConnection connection2 = new SqlConnection(connectionString); 
+            SqlConnection connection2 = new SqlConnection(connectionString);
             SqlCommand sqlCommand2 = new SqlCommand("SELECT * FROM Provincias WHERE IdProvincia != @IdProvincia", connection2);
             sqlCommand2.Parameters.AddWithValue("@IdProvincia", ddlProvincia1.SelectedValue);
-           
+
             connection2.Open();
-            
+
             SqlDataReader sqlDataReader2 = sqlCommand2.ExecuteReader();
-            
+
+            ddlProvincia2.Items.Clear();
             ddlProvincia2.DataSource = sqlDataReader2;
             ddlProvincia2.DataTextField = "NombreProvincia";
             ddlProvincia2.DataValueField = "IdProvincia";
             ddlProvincia2.DataBind();
 
+            // Agregar la opción por defecto
+            ddlProvincia2.Items.Insert(0, new ListItem("-- Seleccionar --", "0"));
+            ddlProvincia2.SelectedIndex = 0;
 
-            sqlDataReader.Close();
+            sqlDataReader2.Close();
+
             connection2.Close();
-
-
         }
+
+
 
 
         protected void ddlProvincia2_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,17 +117,22 @@ namespace TP4_Grupo12
             SqlCommand sqlCommand3 = new SqlCommand("SELECT * FROM Localidades WHERE IdProvincia = @IdProvincia", connection3);
             sqlCommand3.Parameters.AddWithValue("@IdProvincia", ddlProvincia2.SelectedValue);
             connection3.Open();
+
             SqlDataReader sqlDataReader3 = sqlCommand3.ExecuteReader();
 
+            ddlLocalidad2.Items.Clear();
             ddlLocalidad2.DataSource = sqlDataReader3;
             ddlLocalidad2.DataTextField = "NombreLocalidad";
             ddlLocalidad2.DataValueField = "IdLocalidad";
             ddlLocalidad2.DataBind();
 
+            // Agregar la opción por defecto
+            ddlLocalidad2.Items.Insert(0, new ListItem("-- Seleccionar --", "0"));
+            ddlLocalidad2.SelectedIndex = 0;
+            
             sqlDataReader3.Close();
             connection3.Close();
-
-
         }
+
     }
 }

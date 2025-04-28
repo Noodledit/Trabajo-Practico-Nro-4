@@ -11,7 +11,7 @@ namespace TP4_Grupo12
     public partial class WebForm2 : System.Web.UI.Page
     {
 
-        private const string connectionString = @"Server=(local);Database=Neptuno;Integrated Security=True";
+        private const string connectionString = @"Data Source=CAMILAPC\SQLEXPRESS;Initial Catalog=Neptuno;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         private const string sqlQueryProductos = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos";
 
         protected void Page_Load(object sender, EventArgs e)
@@ -120,10 +120,29 @@ namespace TP4_Grupo12
             }
         }
 
+        protected void btnQuitarFiltro_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sqlQueryProductos, connection);
 
+            connection.Open();
 
+            SqlDataReader reader = command.ExecuteReader();
 
+            gvProductos.DataSource = reader;
+            gvProductos.DataBind();
+
+            reader.Close();
+            connection.Close();
+
+            // limpio los campos
+            txtProductoId.Text = "";
+            txtCategoriaId.Text = "";
+            ddlProductoId.SelectedIndex = 0;
+            ddlCategoriaId.SelectedIndex = 0;
+        }
     }
+}
 
- }
+ 
 

@@ -14,10 +14,27 @@
             width: 136px;
         }
         .auto-style3 {
-            width: 180px;
         }
         .auto-style4 {
             width: 165px;
+        }
+        .auto-style5 {
+            width: 85px;
+        }
+        .auto-style9 {
+            width: 136px;
+            height: 23px;
+        }
+        .auto-style10 {
+            width: 85px;
+            height: 23px;
+        }
+        .auto-style11 {
+            width: 165px;
+            height: 23px;
+        }
+        .auto-style12 {
+            height: 23px;
         }
     </style>
 </head>
@@ -28,12 +45,12 @@
         <table class="auto-style1">
             <tr>
                 <td class="auto-style2">IdProducto:</td>
-                <td class="auto-style3">
+                <td class="auto-style5">
                     <asp:DropDownList ID="ddlProductoId" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                     </asp:DropDownList>
                 </td>
                 <td class="auto-style4">
-                    <asp:TextBox ID="txtProductoId" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtProductoId" runat="server" Width="229px"></asp:TextBox>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -42,12 +59,12 @@
             </tr>
             <tr>
                 <td class="auto-style2">IdCategoria:</td>
-                <td class="auto-style3">
+                <td class="auto-style5">
                     <asp:DropDownList ID="ddlCategoriaId" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                     </asp:DropDownList>
                 </td>
                 <td class="auto-style4">
-                    <asp:TextBox ID="txtCategoriaId" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtCategoriaId" runat="server" style="margin-right: 0px" Width="229px"></asp:TextBox>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -56,32 +73,40 @@
             </tr>
             <tr>
                 <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td class="auto-style4">
-                    <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
+                <td class="auto-style5">&nbsp;</td>
+                <td>
+                    <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" Width="77px" />
+                    <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar Filtro" Width="92px" OnClick="btnQuitarFiltro_Click" style="margin-left: 10px"  />
                 </td>
                 <td>
-                    <asp:Button ID="btnQuitarFiltro" runat="server" Text="Quitar Filtro" Width="95px"  />
-                </td>
+                    &nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td class="auto-style4">&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style9"></td>
+                <td class="auto-style10"></td>
+                <td class="auto-style11"></td>
+                <td class="auto-style12"></td>
+                <td class="auto-style12"></td>
+                <td class="auto-style12"></td>
+                <td class="auto-style12"></td>
             </tr>
             <tr>
                 <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">
+                <td class="auto-style3" colspan="2">
                     <asp:GridView ID="gvProductos" runat="server">
                     </asp:GridView>
                 </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style5">&nbsp;</td>
                 <td class="auto-style4">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -90,16 +115,7 @@
             </tr>
             <tr>
                 <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td class="auto-style4">&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
+                <td class="auto-style5">&nbsp;</td>
                 <td class="auto-style4">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>

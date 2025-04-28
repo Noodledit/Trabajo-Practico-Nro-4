@@ -79,13 +79,12 @@ namespace TP4_Grupo12
                         break;
                 }
             }
-
            
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(SqlCondicion, connection);
 
-                // Parámetros
+                
                 if (!string.IsNullOrEmpty(txtProductoId.Text))
                 {
                     command.Parameters.AddWithValue("@IdProducto", int.Parse(txtProductoId.Text));

@@ -12,7 +12,6 @@ namespace TP4_Grupo12
     {
 
         private const string connectionString = @"Server=(local);Database=Neptuno;Integrated Security=True";
-
         private const string sqlQueryProductos = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos";
 
         protected void Page_Load(object sender, EventArgs e)
@@ -79,7 +78,23 @@ namespace TP4_Grupo12
                         break;
                 }
             }
-           
+
+            if (!string.IsNullOrEmpty(txtCategoriaId.Text))
+            {
+                switch (ddlCategoriaId.SelectedValue)
+                {
+                    case "1":
+                        SqlCondicion += " IdCategoría = @IdCategoría";
+                        break;
+                    case "2":
+                        SqlCondicion += " IdCategoría > @IdCategoría";
+                        break;
+                    case "3":
+                        SqlCondicion += " IdCategoría < @IdCategoría";
+                        break;
+                }
+            }
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(SqlCondicion, connection);
@@ -90,7 +105,10 @@ namespace TP4_Grupo12
                     command.Parameters.AddWithValue("@IdProducto", int.Parse(txtProductoId.Text));
                 }
 
-               
+                if (!string.IsNullOrEmpty(txtCategoriaId.Text))
+                {
+                    command.Parameters.AddWithValue("@IdCategoría", int.Parse(txtCategoriaId.Text));
+                }
 
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();

@@ -129,14 +129,25 @@ namespace TP4_Grupo12
 
         protected void btnReiniciar_Click(object sender, EventArgs e)
         {
-
+            
             ddlProvincia1.SelectedIndex = 0;
 
-            ddlLocalidad1.SelectedIndex = 0;
+            ddlLocalidad1.Items.Clear();
+            ddlLocalidad1.Items.Insert(0, new ListItem("-- Seleccionar --", "0"));
 
-            ddlProvincia2.SelectedIndex = 0;
+            
+            ddlLocalidad2.Items.Clear();
+            ddlLocalidad2.Items.Insert(0, new ListItem("-- Seleccionar --", "0"));
 
-            ddlLocalidad2.SelectedIndex = 0;
+            
+            ddlProvincia2.Items.Clear();
+            ddlProvincia2.Items.Insert(0, new ListItem("-- Seleccionar --", "0"));
+
+            
+
+
+
+
 
         }
     }

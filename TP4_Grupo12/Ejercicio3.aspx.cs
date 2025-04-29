@@ -39,6 +39,9 @@ namespace TP4_Grupo12
                 // 
                 ddlTema.DataBind();
 
+                ddlTema.Items.Insert(0, new ListItem("-- Seleccionar --", "0"));
+
+
                 sqlReader.Close();
 
                 connection.Close();

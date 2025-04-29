@@ -15,9 +15,10 @@ namespace TP4_Grupo12
         // Punto 1: Creando la conexión y cargando información
 
         private const string connectionString = @"Data Source=CAMILAPC\SQLEXPRESS;Initial Catalog=Libreria;Integrated Security=True;TrustServerCertificate=True";
+
         //@"Data Source=DESKTOP-MHN7D94\SQLEXPRESS;Initial Catalog=Libreria;Integrated Security=True"
 
-        private string consultaSQl = "SELECT IdTema, Tema FROM Temas";
+        private string consultaSQl = "SELECT DISTINCT IdTema, Tema FROM Temas";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -37,9 +38,10 @@ namespace TP4_Grupo12
 
                 // 
                 ddlTema.DataBind();
-                connection.Close();
 
                 sqlReader.Close();
+
+                connection.Close();
 
             }
         }

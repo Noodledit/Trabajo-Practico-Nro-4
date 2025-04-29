@@ -59,7 +59,9 @@
                 <td class="auto-style1">&nbsp;</td>
                 <td class="auto-style10">&nbsp;</td>
                 <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:Button ID="btnReiniciar" runat="server" OnClick="btnReiniciar_Click" Text="Reiniciar opciones" Width="127px" />
+                </td>
             </tr>
             <tr>
                 <td class="auto-style1">&nbsp;</td>

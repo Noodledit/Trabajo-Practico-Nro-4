@@ -127,6 +127,17 @@ namespace TP4_Grupo12
             connection3.Close();
         }
 
+        protected void btnReiniciar_Click(object sender, EventArgs e)
+        {
 
+            ddlProvincia1.SelectedIndex = 0;
+
+            ddlLocalidad1.SelectedIndex = 0;
+
+            ddlProvincia2.SelectedIndex = 0;
+
+            ddlLocalidad2.SelectedIndex = 0;
+
+        }
     }
 }

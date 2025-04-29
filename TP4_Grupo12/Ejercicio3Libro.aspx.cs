@@ -22,7 +22,7 @@ namespace TP4_Grupo12
         {
 
 
-                string connectionDB = @"Data Source=DESKTOP-JNJ0TAL\SQLEXPRESS;DataBase=Libreria;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+                string connectionDB = @"Data Source=localhost;DataBase=Libreria;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
                 // Data Source=localhost;Initial Catalog=Libreria;Integrated Security=True";
                 // Data Source = DESKTOP - MHN7D94\\SQLEXPRESS; Initial Catalog = Libreria; Integrated Security = True
